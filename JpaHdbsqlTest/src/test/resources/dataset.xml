@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+    <COUNTRIES COUNTRY_ID="T1" 
+                COUNTRY_NAME="TEST1"/> 
+    <COUNTRIES COUNTRY_ID="T2" 
+                COUNTRY_NAME="TEST2"/> 
+    <COUNTRIES COUNTRY_ID="T3" 
+                COUNTRY_NAME="TEST3"/> 
+    <COUNTRIES COUNTRY_ID="T4" 
+                COUNTRY_NAME="TEST3"/> 
+    <COUNTRIES COUNTRY_ID="T5" 
+                COUNTRY_NAME="TEST3"/> 
+    <COUNTRIES COUNTRY_ID="T6" 
+                COUNTRY_NAME="TEST3"/> 
+    <COUNTRIES COUNTRY_ID="T7" 
+                COUNTRY_NAME="TEST3"/> 
+    <COUNTRIES COUNTRY_ID="T8" 
+                COUNTRY_NAME="TEST3"/> 
+</dataset>

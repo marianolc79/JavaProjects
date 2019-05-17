@@ -1,0 +1,35 @@
+package codingtest;
+
+import java.util.Arrays;
+
+/*
+Write a program to print all distinct permutations of a given string in sorted order. Note that the input string may contain duplicate characters.
+ */
+public class PrintAllPermutations {
+
+	public static String sortString(String str) {
+		char[] charArray = str.toCharArray();
+		Arrays.sort(charArray);
+		return new String(charArray);
+	}
+
+	public static void printPermutations(String str) {
+		String sorted = sortString(str);
+		perm(sorted, "");
+	}
+
+	public static void perm(String str, String prefix) {
+		if (str.length() == 0) {
+			System.out.println(prefix);
+		} else {
+			for (int i = 0; i < str.length(); i++) {
+				perm(str.substring(0, i) + str.substring(i + 1), prefix + String.valueOf(str.charAt(i)));
+			}
+		}
+	}
+
+	public static void main(String[] args) {
+		printPermutations("ZFSGBCA");
+	}
+
+}

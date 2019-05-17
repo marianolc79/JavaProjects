@@ -1,0 +1,33 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:batch="http://www.springframework.org/schema/batch"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/batch 
+		http://www.springframework.org/schema/batch/spring-batch.xsd">
+
+	<!-- Persistencia en bbdd? 
+	<batch:job-repository id="jobRepository"
+	    data-source="dataSource"
+	    transaction-manager="transactionManager"
+	    isolation-level-for-create="SERIALIZABLE"
+	    table-prefix="BATCH_" 
+		max-varchar-length="1000" />
+	-->
+	
+	<!-- Job Repository, Job Launcher and transactionManager configuration -->
+ 	<bean id="jobRepository"
+        class="org.springframework.batch.core.repository.support.MapJobRepositoryFactoryBean" />
+  	
+  	<bean id="transactionManager"
+		class="org.springframework.batch.support.transaction.ResourcelessTransactionManager" />
+	 
+    <bean id="jobLauncher"
+        class="org.springframework.batch.core.launch.support.SimpleJobLauncher">
+        <property name="jobRepository" ref="jobRepository" />
+    </bean>
+
+
+
+</beans>
