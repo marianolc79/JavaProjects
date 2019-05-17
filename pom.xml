@@ -8,6 +8,7 @@
 	<packaging>pom</packaging>
 	<name>java8projects</name>
 
+
 	<properties>
 		<!-- Java compiler version sources et binaires -->
 		<maven.compiler.source>1.8</maven.compiler.source>
