@@ -61,4 +61,5 @@ public class BatchConfig {
 		mongoItemReader.setSort(sort);
 		return mongoItemReader;
 	}
+
 }

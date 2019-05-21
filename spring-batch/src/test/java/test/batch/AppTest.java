@@ -1,4 +1,4 @@
-package com.mkyong;
+package test.batch;
 
 import static org.junit.Assert.assertEquals;
 
@@ -12,8 +12,11 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = { "classpath:spring/batch/jobs/jobs.xml", "classpath:spring/batch/config/context.xml",
-		"classpath:spring/batch/config/database.xml", "classpath:spring/batch/config/test-context.xml" })
+@ContextConfiguration(locations = { 
+		"classpath:spring/batch/jobs/jobs.xml", 
+		"classpath:spring/batch/config/context.xml",
+		"classpath:spring/batch/config/database.xml", 
+		"classpath:spring/batch/config/test-context.xml" })
 public class AppTest {
 
 	@Autowired

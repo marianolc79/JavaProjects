@@ -1,4 +1,4 @@
-package com.mkyong;
+package test.batch;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

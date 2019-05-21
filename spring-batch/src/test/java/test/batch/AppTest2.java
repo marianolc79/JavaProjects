@@ -1,4 +1,4 @@
-package com.mkyong;
+package test.batch;
 
 import org.springframework.batch.core.BatchStatus;
 import org.springframework.batch.core.JobExecution;
