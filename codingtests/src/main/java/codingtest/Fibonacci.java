@@ -24,12 +24,11 @@ public class Fibonacci {
 		BigInteger n2 = null;
 		List<BigInteger> list = new ArrayList<>();
 		for (int i = 1; i <= n; i++) {
-			if (i == 1) {
-				n1 = BigInteger.ZERO;
-				list.add(n1);
-			} else if (i == 2) {
-				n1 = BigInteger.ONE;
-				n2 = n1;
+			if (i < 3) {
+				if (i == 2) {
+					n2 = n1;
+				}
+				n1 = new BigInteger(String.valueOf(i - 1));
 				list.add(n1);
 			} else {
 				BigInteger fib = n1.add(n2);
