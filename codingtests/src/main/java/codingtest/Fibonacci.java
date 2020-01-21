@@ -1,9 +1,14 @@
 package codingtest;
 
+import java.math.BigInteger;
+import java.util.ArrayList;
+import java.util.List;
+
 public class Fibonacci {
 
 	public static void main(String[] args) {
-		printIterative(100);
+		List<BigInteger> list = getListIterative(100);
+		System.out.println(list);
 	}
 
 	private static long fibonnacciRec(long n) {
@@ -14,16 +19,25 @@ public class Fibonacci {
 		}
 	}
 
-	private static void printIterative(long n) {
-		long n1 = 0;
-		long n2 = 0;
-		for (int i = 0; i < n; i++) {
-			long fib = (n1 + n2) == 0 ? 1 : (n1 + n2);
-			System.out.println(fib);
-			if (n2 != 0) {
-				n1 = n2;
+	private static List<BigInteger> getListIterative(int n) {
+		BigInteger n1 = null;
+		BigInteger n2 = null;
+		List<BigInteger> list = new ArrayList<>();
+		for (int i = 1; i <= n; i++) {
+			if (i == 1) {
+				n1 = BigInteger.ZERO;
+				list.add(n1);
+			} else if (i == 2) {
+				n1 = BigInteger.ONE;
+				n2 = n1;
+				list.add(n1);
+			} else {
+				BigInteger fib = n1.add(n2);
+				list.add(fib);
+				n2 = n1;
+				n1 = fib;
 			}
-			n2 = fib;
 		}
+		return list;
 	}
 }
