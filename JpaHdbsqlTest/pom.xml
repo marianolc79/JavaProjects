@@ -9,13 +9,13 @@
 		<dbunitVersion>2.5.3</dbunitVersion>
 	</properties>
 	<dependencies>
-		<dependency>
-			<artifactId>ojdbc</artifactId>
-			<groupId>ojdbc</groupId>
-			<version>6</version>
-			<systemPath>C:\oraclexe\app\oracle\product\11.2.0\server\jdbc\lib\ojdbc6.jar</systemPath>
-			<scope>system</scope>
-		</dependency>
+<!-- 		<dependency> -->
+<!-- 			<artifactId>ojdbc</artifactId> -->
+<!-- 			<groupId>ojdbc</groupId> -->
+<!-- 			<version>6</version> -->
+<!-- 			<systemPath>C:\oraclexe\app\oracle\product\11.2.0\server\jdbc\lib\ojdbc6.jar</systemPath> -->
+<!-- 			<scope>system</scope> -->
+<!-- 		</dependency> -->
 		<dependency>
 			<groupId>org.dbunit</groupId>
 			<artifactId>dbunit</artifactId>
