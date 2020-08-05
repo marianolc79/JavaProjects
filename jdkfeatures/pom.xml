@@ -8,8 +8,12 @@
 		<artifactId>java8projects</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-
-	<groupId>java8features</groupId>
-	<artifactId>java8features</artifactId>
+	<properties>
+		<!-- Java compiler version sources et binaires -->
+		<maven.compiler.source>1.14</maven.compiler.source>
+		<maven.compiler.target>1.14</maven.compiler.target>
+	</properties>
+	<groupId>jdkfeatures</groupId>
+	<artifactId>jdkfeatures</artifactId>
 
 </project>

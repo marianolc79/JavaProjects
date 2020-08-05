@@ -76,8 +76,9 @@
 
 	<modules>
 		<module>codingtests</module>
-		<module>java8features</module>
+		<module>jdkfeatures</module>
 		<module>jee-rest</module>
+		<module>tdd</module>
 	</modules>
 
 	<build>
