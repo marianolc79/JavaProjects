@@ -1,4 +1,4 @@
-package java8features;
+package jdkfeatures;
 
 import java.util.LinkedHashMap;
 import java.util.Map;

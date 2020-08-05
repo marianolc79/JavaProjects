@@ -1,4 +1,4 @@
-package java8features;
+package jdkfeatures;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.contains;

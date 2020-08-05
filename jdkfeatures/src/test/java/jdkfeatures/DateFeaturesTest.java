@@ -1,4 +1,4 @@
-package java8features;
+package jdkfeatures;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
