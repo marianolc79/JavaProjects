@@ -11,9 +11,7 @@
 
 	<properties>
 		<!-- Java compiler version sources et binaires -->
-		<maven.compiler.source>1.8</maven.compiler.source>
-		<maven.compiler.target>1.8</maven.compiler.target>
-
+		
 		<junit-jupiter-version>5.6.0</junit-jupiter-version>
 		<junit-platform-version>1.6.0</junit-platform-version>
 		<powermock-version>1.6.6</powermock-version>
@@ -84,15 +82,6 @@
 	<build>
 		<plugins>
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.8.0</version>
-				<configuration>
-					<release>8</release>
-				</configuration>
-			</plugin>
-
-			<plugin>
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>2.19</version>
 				<dependencies>
@@ -154,7 +143,13 @@
 				</configuration>
 			</plugin>
 
-
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>16</source>
+					<target>16</target>
+				</configuration>
+			</plugin>
 			<!-- <plugin> -->
 			<!-- <groupId>org.apache.maven.plugins</groupId> -->
 			<!-- <artifactId>maven-pmd-plugin</artifactId> -->

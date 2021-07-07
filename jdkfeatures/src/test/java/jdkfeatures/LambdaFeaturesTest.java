@@ -1,7 +1,7 @@
 package jdkfeatures;
 
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.collection.IsIterableContainingInOrder.contains;
+import static org.hamcrest.Matchers.contains;
 import static org.junit.Assert.assertEquals;
 
 import java.util.Arrays;
@@ -11,7 +11,6 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
@@ -72,15 +71,32 @@ class LambdaFeaturesTest {
 		Collections.shuffle(employeeList);
 	}
 
-	@AfterEach
-	void tearDown() throws Exception {
+	@Test
+	@DisplayName("Runnable")
+	public void runnableTest() throws Exception {
+		Runnable runnable = () -> System.out.println("Awesome! Lambda Expression here!");
+		runnable.run();
+	}
+
+	@Test
+	@DisplayName("Sort")
+	public void shouldOrderTheListOfNamesByLambdaExpressionWithoutParameterTypes() throws Exception {
+		List<String> craftCoderGuides = Arrays.asList("Mockito", "CDI", "JUnit", "Hibernate", "Spring");
+
+		Collections.sort(craftCoderGuides, (firstGuide, secondGuide) -> firstGuide.compareTo(secondGuide));
+
+		Collections.sort(craftCoderGuides,
+				(final String firstGuide, final String secondGuide) -> firstGuide.compareTo(secondGuide));
+
+		assertThat(craftCoderGuides, contains("CDI", "Hibernate", "JUnit", "Mockito", "Spring"));
 	}
 
 	@Test()
 	@DisplayName("Filtrar elementos mayores a 30")
 	void testMapFilter() {
-		List<Integer> list2 = stringList.stream().map(x -> Integer.parseInt(x)).filter(x -> x > 30)
+		List<Integer> list2 = stringList.stream().map(Integer::parseInt).filter(x -> x > 30)
 				.collect(Collectors.toList());
+
 		assertThat(list2, contains(60, 48));
 	}
 
@@ -88,8 +104,8 @@ class LambdaFeaturesTest {
 	@DisplayName("Calculo de un valor escalar")
 	void testMax() {
 
-		Optional<Integer> maximo = stringList.stream().map(x -> Integer.parseInt(x)).max(Comparator.comparing(x -> x));
-		long count = stringList.stream().map(x -> Integer.parseInt(x)).filter(x -> x <= 20).count();
+		Optional<Integer> maximo = stringList.stream().map(Integer::parseInt).max(Comparator.comparing(x -> x));
+		long count = stringList.stream().map(Integer::parseInt).filter(x -> x <= 20).count();
 
 		assertEquals(new Integer(60), maximo.get());
 		assertEquals(new Long(3), new Long(count));
